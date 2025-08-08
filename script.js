@@ -21,7 +21,7 @@ function updateTimer() {
         if (days < 7) {
             const timerNumbers = document.querySelectorAll('.timer-number');
             timerNumbers.forEach(number => {
-                number.style.color = '#e74c3c';
+                number.style.color = '#dc3545';
                 number.style.animation = 'pulse 1s infinite';
             });
         }
@@ -251,13 +251,13 @@ function showFieldError(field, message) {
     clearFieldError(field);
     
     // Add error styling
-    field.style.borderColor = '#e74c3c';
-    field.style.boxShadow = '0 0 0 3px rgba(231, 76, 60, 0.1)';
+    field.style.borderColor = '#dc3545';
+    field.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
     
     // Create error message
     const errorDiv = document.createElement('div');
     errorDiv.className = 'field-error';
-    errorDiv.style.cssText = 'color: #e74c3c; font-size: 0.9rem; margin-top: 5px; display: flex; align-items: center; gap: 5px;';
+    errorDiv.style.cssText = 'color: #dc3545; font-size: 0.9rem; margin-top: 5px; display: flex; align-items: center; gap: 5px;';
     errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i>${message}`;
     
     field.parentNode.appendChild(errorDiv);
