@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightspeed Fellows Program</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-bolt"></i>
+                <span>Lightspeed Fellows</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#eligibility">Eligibility</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#apply">Apply</a>
+                <a href="#typeform-apply">Typeform</a>
+                <a href="#apply" class="cta-button">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Lightspeed <span class="highlight">Fellows</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Accelerate your career in technology with mentorship, resources, and opportunities from industry leaders.
+                </p>
+                <div class="hero-cta">
+                    <a href="#apply" class="primary-button">
+                        <i class="fas fa-rocket"></i>
+                        Apply Now
+                    </a>
+                    <a href="#about" class="secondary-button">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </a>
+                </div>
+                
+                <!-- Deadline Timer -->
+                <div class="deadline-timer">
+                    <div class="timer-header">
+                        <i class="fas fa-clock"></i>
+                        <span>Applications Close In</span>
+                    </div>
+                    <div class="timer-display">
+                        <div class="timer-unit">
+                            <span id="days" class="timer-number">00</span>
+                            <span class="timer-label">Days</span>
+                        </div>
+                        <div class="timer-unit">
+                            <span id="hours" class="timer-number">00</span>
+                            <span class="timer-label">Hours</span>
+                        </div>
+                        <div class="timer-unit">
+                            <span id="minutes" class="timer-number">00</span>
+                            <span class="timer-label">Minutes</span>
+                        </div>
+                        <div class="timer-unit">
+                            <span id="seconds" class="timer-number">00</span>
+                            <span class="timer-label">Seconds</span>
+                        </div>
+                    </div>
+                    <div class="timer-note">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Don't miss your chance to join the program!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="element element-1">🚀</div>
+                    <div class="element element-2">💡</div>
+                    <div class="element element-3">⚡</div>
+                    <div class="element element-4">🎯</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About the Program</h2>
+                <p>Join a community of exceptional students building the future of technology</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Mentorship</h3>
+                    <p>Direct access to Lightspeed partners and portfolio company leaders for career guidance and industry insights.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Network</h3>
+                    <p>Connect with fellow students, alumni, and professionals across the technology ecosystem.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Opportunities</h3>
+                    <p>Exclusive access to internships, full-time roles, and startup opportunities within our network.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Resources</h3>
+                    <p>Workshops, events, and educational content designed to accelerate your professional development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section id="eligibility" class="eligibility">
+        <div class="container">
+            <div class="section-header">
+                <h2>Who Should Apply</h2>
+                <p>We're looking for exceptional students passionate about technology and innovation</p>
+            </div>
+            <div class="eligibility-content">
+                <div class="eligibility-criteria">
+                    <h3>Eligibility Criteria</h3>
+                    <ul class="criteria-list">
+                        <li><i class="fas fa-check"></i> Currently enrolled undergraduate or graduate student</li>
+                        <li><i class="fas fa-check"></i> Pursuing a degree in Computer Science, Engineering, or related technical field</li>
+                        <li><i class="fas fa-check"></i> Strong academic performance and demonstrated technical skills</li>
+                        <li><i class="fas fa-check"></i> Passion for technology, innovation, and entrepreneurship</li>
+                        <li><i class="fas fa-check"></i> Leadership experience or potential for leadership</li>
+                        <li><i class="fas fa-check"></i> Available to participate in program activities and events</li>
+                    </ul>
+                </div>
+                <div class="eligibility-note">
+                    <div class="note-card">
+                        <h4><i class="fas fa-lightbulb"></i> What We Look For</h4>
+                        <p>While we welcome applications from all grade levels, we typically select upperclassmen and graduate students who have demonstrated strong technical foundations and leadership potential. We value diversity of thought, background, and experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2>Important Dates</h2>
+                <p>Mark your calendar for key program milestones</p>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date">March 15</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Applications Open</h4>
+                        <p>Submit your application through our online portal</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date">April 30</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Application Deadline</h4>
+                        <p>All applications must be submitted by 11:59 PM PST</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date">May 15</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Interviews</h4>
+                        <p>Selected candidates will be invited for interviews</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date">June 1</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Fellows Announced</h4>
+                        <p>Successful candidates will be notified and welcomed to the program</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Section -->
+    <section id="apply" class="application">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Apply?</h2>
+                <p>Take the first step towards accelerating your career in technology</p>
+            </div>
+            <div class="application-container">
+                <div class="application-info">
+                    <h3>Application Process</h3>
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Complete Application</h4>
+                                <p>Fill out the form with your personal information, academic background, and responses to our questions.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Submit Materials</h4>
+                                <p>Upload your resume, transcript, and any additional materials that showcase your achievements.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Interview</h4>
+                                <p>Selected candidates will be invited for a virtual interview with our selection committee.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="application-form-container">
+                    <form id="applicationForm" class="application-form">
+                        <div class="form-section">
+                            <h3>Personal Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Academic Information</h3>
+                            <div class="form-group">
+                                <label for="university">University/Institution *</label>
+                                <input type="text" id="university" name="university" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="major">Major/Field of Study *</label>
+                                    <input type="text" id="major" name="major" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="graduationYear">Expected Graduation Year *</label>
+                                    <select id="graduationYear" name="graduationYear" required>
+                                        <option value="">Select Year</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="gpa">GPA (if applicable)</label>
+                                <input type="number" id="gpa" name="gpa" step="0.01" min="0" max="4.0">
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Experience & Interests</h3>
+                            <div class="form-group">
+                                <label for="resume">Resume/CV *</label>
+                                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="transcript">Unofficial Transcript</label>
+                                <input type="file" id="transcript" name="transcript" accept=".pdf,.doc,.docx">
+                            </div>
+                            <div class="form-group">
+                                <label for="interests">Areas of Interest *</label>
+                                <textarea id="interests" name="interests" rows="3" placeholder="Describe your technical interests, projects, and career goals..." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="experience">Relevant Experience</label>
+                                <textarea id="experience" name="experience" rows="3" placeholder="Describe your internships, research, projects, or other relevant experience..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Essay Questions</h3>
+                            <div class="form-group">
+                                <label for="essay1">Why are you interested in the Lightspeed Fellows program? (250 words max) *</label>
+                                <textarea id="essay1" name="essay1" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="essay2">Describe a technical project or challenge you've worked on and what you learned from it. (250 words max) *</label>
+                                <textarea id="essay2" name="essay2" rows="4" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Additional Information</h3>
+                            <div class="form-group">
+                                <label for="referral">How did you hear about this program?</label>
+                                <select id="referral" name="referral">
+                                    <option value="">Select an option</option>
+                                    <option value="university">University Career Center</option>
+                                    <option value="professor">Professor/Faculty</option>
+                                    <option value="friend">Friend/Classmate</option>
+                                    <option value="social">Social Media</option>
+                                    <option value="website">Lightspeed Website</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="additional">Any additional information you'd like to share?</label>
+                                <textarea id="additional" name="additional" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="submit-button">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Application
+                            </button>
+                            <p class="form-note">* Required fields</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typeform Integration Section -->
+    <section id="typeform-apply" class="typeform-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Alternative Application Method</h2>
+                <p>Prefer a different application experience? Use our Typeform below</p>
+            </div>
+            <div class="typeform-container">
+                <div class="typeform-info">
+                    <div class="typeform-benefits">
+                        <h3>Why Use Typeform?</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Streamlined, step-by-step experience</li>
+                            <li><i class="fas fa-check"></i> Progress tracking and auto-save</li>
+                            <li><i class="fas fa-check"></i> Mobile-optimized interface</li>
+                            <li><i class="fas fa-check"></i> Easy file uploads</li>
+                            <li><i class="fas fa-check"></i> Professional form analytics</li>
+                        </ul>
+                    </div>
+                    <div class="typeform-note">
+                        <div class="note-card">
+                            <h4><i class="fas fa-info-circle"></i> Note</h4>
+                            <p>Both application methods (custom form above and Typeform below) collect the same information. Choose whichever you prefer - we'll review all applications equally.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="typeform-embed">
+                    <div class="typeform-placeholder">
+                        <div class="placeholder-content">
+                            <i class="fas fa-external-link-alt"></i>
+                            <h4>Typeform Integration</h4>
+                            <p>To integrate your Typeform, replace this placeholder with your Typeform embed code.</p>
+                            <div class="integration-instructions">
+                                <h5>Integration Steps:</h5>
+                                <ol>
+                                    <li>Create your form in Typeform</li>
+                                    <li>Copy the embed code from Typeform</li>
+                                    <li>Replace the placeholder div below with your embed code</li>
+                                    <li>Test the integration</li>
+                                </ol>
+                            </div>
+                            <div class="embed-code-example">
+                                <h5>Example Embed Code:</h5>
+                                <code>
+                                    &lt;div data-tf-widget="YOUR_FORM_ID" data-tf-opacity="100" data-tf-iframe-props="title=Lightspeed Fellows Application" data-tf-transitive-search-params data-tf-medium="snippet" style="width:100%;height:500px;"&gt;&lt;/div&gt;&lt;script src="//embed.typeform.com/next/embed.js"&gt;&lt;/script&gt;
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-bolt"></i>
+                        <span>Lightspeed Fellows</span>
+                    </div>
+                    <p>Accelerating the next generation of technology leaders.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#eligibility">Eligibility</a></li>
+                        <li><a href="#timeline">Timeline</a></li>
+                        <li><a href="#apply">Apply</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Questions about the program?</p>
+                    <a href="mailto:fellows@lightspeed.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        fellows@lightspeed.com
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lightspeed Fellows. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
