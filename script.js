@@ -80,6 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
+
     // Form validation and submission
     const applicationForm = document.getElementById('applicationForm');
     
@@ -132,18 +134,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                if (entry.target.classList.contains('fade-in') || 
+                    entry.target.classList.contains('slide-in-left') || 
+                    entry.target.classList.contains('slide-in-right') || 
+                    entry.target.classList.contains('scale-in')) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             }
         });
     }, observerOptions);
 
     // Observe elements for animation
-    const animateElements = document.querySelectorAll('.feature-card, .timeline-item, .step, .note-card');
+    const animateElements = document.querySelectorAll('.feature-card, .timeline-item, .step, .note-card, .fade-in, .slide-in-left, .slide-in-right, .scale-in');
     animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        if (!el.classList.contains('fade-in') && 
+            !el.classList.contains('slide-in-left') && 
+            !el.classList.contains('slide-in-right') && 
+            !el.classList.contains('scale-in')) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        }
         observer.observe(el);
     });
 

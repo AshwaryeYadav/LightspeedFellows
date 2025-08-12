@@ -3,63 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lightspeed Fellows Program</title>
+    <title>Lightspeed Fellows Program | LSVP</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://lsvp.com/wp-content/uploads/2023/12/lightspeed-logo.svg" alt="Lightspeed" class="logo-img">
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#partners">Partners</a>
+                <a href="#eligibility">Eligibility</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#apply">Apply</a>
+                <a href="#apply" class="cta-button">Apply Now</a>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-branding">
-                    <h1 class="hero-logo">LIGHTSPEED</h1>
-                    <h2 class="hero-title">
+                    <h1 class="hero-title">
                         POSSIBILITY GROWS<br>
                         <span class="highlight">THE DEEPER YOU GO</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        Join the next generation of technology leaders through Lightspeed's comprehensive fellowship program.
                     </h2>
                 </div>
-                <p class="hero-subtitle">
-                    Join the next generation of technology leaders through Lightspeed's comprehensive fellowship program.
-                </p>
                 <div class="hero-cta">
                     <a href="#apply" class="primary-button">
                         Apply Now
                     </a>
+                    <p class="hero-note">Applications close April 30, 2024</p>
                 </div>
                 
-                <!-- Deadline Timer -->
-                <div class="deadline-timer">
-                    <div class="timer-header">
-                        <i class="fas fa-clock"></i>
-                        <span>Applications Close In</span>
-                    </div>
-                    <div class="timer-display">
-                        <div class="timer-unit">
-                            <span id="days" class="timer-number">00</span>
-                            <span class="timer-label">Days</span>
-                        </div>
-                        <div class="timer-unit">
-                            <span id="hours" class="timer-number">00</span>
-                            <span class="timer-label">Hours</span>
-                        </div>
-                        <div class="timer-unit">
-                            <span id="minutes" class="timer-number">00</span>
-                            <span class="timer-label">Minutes</span>
-                        </div>
-                        <div class="timer-unit">
-                            <span id="seconds" class="timer-number">00</span>
-                            <span class="timer-label">Seconds</span>
-                        </div>
-                    </div>
-                    <div class="timer-note">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <span>Don't miss your chance to join the program!</span>
-                    </div>
-                </div>
+
             </div>
             <div class="hero-visual">
                 <div class="floating-elements">
@@ -75,33 +62,33 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="section-header">
-                <h2>About the Program</h2>
+            <div class="section-header fade-in">
+                <h2>Program Overview</h2>
                 <p>Join a community of exceptional students building the future of technology</p>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Mentorship</h3>
                     <p>Direct access to Lightspeed partners and portfolio company leaders for career guidance and industry insights.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3>Network</h3>
                     <p>Connect with fellow students, alumni, and professionals across the technology ecosystem.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <h3>Opportunities</h3>
                     <p>Exclusive access to internships, full-time roles, and startup opportunities within our network.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
@@ -112,12 +99,44 @@
         </div>
     </section>
 
+    <!-- Partners Section -->
+    <section id="partners" class="partners">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Program Partners</h2>
+                <p>Meet the Lightspeed partners leading this initiative</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-card slide-in-left">
+                    <div class="partner-image">
+                        <img src="https://lsvp.com/wp-content/uploads/2024/01/james-alcorn.jpg" alt="James Alcorn" class="partner-img">
+                    </div>
+                    <div class="partner-info">
+                        <h3>James Alcorn</h3>
+                        <p class="partner-title">Partner</p>
+                        <p class="partner-bio">James leads Lightspeed's early-stage investments in enterprise software and AI. He has been instrumental in building the firm's thesis around the future of work and developer productivity.</p>
+                    </div>
+                </div>
+                <div class="partner-card slide-in-right">
+                    <div class="partner-image">
+                        <img src="https://lsvp.com/wp-content/uploads/2024/01/faraz-fatemi.jpg" alt="Faraz Fatemi" class="partner-img">
+                    </div>
+                    <div class="partner-info">
+                        <h3>Faraz Fatemi</h3>
+                        <p class="partner-title">Partner</p>
+                        <p class="partner-bio">Faraz focuses on growth-stage investments in enterprise software and infrastructure. He brings deep expertise in scaling companies and building lasting partnerships with founders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Application Section -->
     <section id="apply" class="application">
         <div class="container">
             <div class="section-header">
-                <h2>Ready to Apply?</h2>
-                <p>Take the first step towards accelerating your career in technology</p>
+                <h2>Application</h2>
+                <p>Complete your application to join the Lightspeed Fellows program</p>
             </div>
             <div class="application-container">
                 <div class="application-info">
@@ -264,7 +283,86 @@
         </div>
     </section>
 
+    <!-- Eligibility Section -->
+    <section id="eligibility" class="eligibility">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Who Should Apply</h2>
+                <p>We're looking for exceptional students passionate about technology and innovation</p>
+            </div>
+            <div class="eligibility-content">
+                <div class="eligibility-criteria">
+                    <h3>Eligibility Criteria</h3>
+                    <ul class="criteria-list">
+                        <li><i class="fas fa-check"></i> Currently enrolled undergraduate or graduate student</li>
+                        <li><i class="fas fa-check"></i> Pursuing a degree in Computer Science, Engineering, or related technical field</li>
+                        <li><i class="fas fa-check"></i> Strong academic performance and demonstrated technical skills</li>
+                        <li><i class="fas fa-check"></i> Passion for technology, innovation, and entrepreneurship</li>
+                        <li><i class="fas fa-check"></i> Leadership experience or potential for leadership</li>
+                        <li><i class="fas fa-check"></i> Available to participate in program activities and events</li>
+                    </ul>
+                </div>
+                <div class="eligibility-note">
+                    <div class="note-card">
+                        <h4><i class="fas fa-lightbulb"></i> What We Look For</h4>
+                        <p>While we welcome applications from all grade levels, we typically select upperclassmen and graduate students who have demonstrated strong technical foundations and leadership potential. We value diversity of thought, background, and experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Important Dates</h2>
+                <p>Mark your calendar for key program milestones</p>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">
+                        <span class="date">March 15</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Applications Open</h4>
+                        <p>Submit your application through our online portal</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">
+                        <span class="date">April 30</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Application Deadline</h4>
+                        <p>All applications must be submitted by 11:59 PM PST</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">
+                        <span class="date">May 15</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Interviews</h4>
+                        <p>Selected candidates will be invited for interviews</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">
+                        <span class="date">June 1</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Fellows Announced</h4>
+                        <p>Successful candidates will be notified and welcomed to the program</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -272,7 +370,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <span>LIGHTSPEED</span>
+                        <img src="https://lsvp.com/wp-content/uploads/2023/12/lightspeed-logo.svg" alt="Lightspeed" class="logo-img">
                     </div>
                     <p>© 2024 Lightspeed Management Company, L.L.C. All rights reserved.</p>
                 </div>
