@@ -1,7 +1,7 @@
 // Deadline timer functionality
 function updateTimer() {
-    // Set the deadline date (April 30, 2024 at 11:59 PM PST)
-    const deadline = new Date('April 30, 2024 23:59:00 PST').getTime();
+    // Set the deadline date (September 1, 2025 at 11:59 PM PT)
+    const deadline = new Date('2025-09-01T23:59:00-07:00').getTime();
     const now = new Date().getTime();
     const timeLeft = deadline - now;
 
@@ -125,41 +125,97 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animate elements on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    // Continuous scroll animations
+    let lastScrollY = window.scrollY;
+    let ticking = false;
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (entry.target.classList.contains('fade-in') || 
-                    entry.target.classList.contains('slide-in-left') || 
-                    entry.target.classList.contains('slide-in-right') || 
-                    entry.target.classList.contains('scale-in')) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+    function updateScrollAnimations() {
+        const currentScrollY = window.scrollY;
+        const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+        
+        // Get all animated elements
+        const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .roll-in-left, .roll-in-right, .roll-out-left, .roll-out-right, .feature-card, .timeline-item, .step, .note-card, .criteria-list li, .eligibility-criteria h3');
+        
+        animatedElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const elementTop = rect.top;
+            const elementBottom = rect.bottom;
+            const windowHeight = window.innerHeight;
+            
+            // Check if element is in viewport
+            const isInView = elementTop < windowHeight && elementBottom > 0;
+            
+            if (scrollDirection === 'down') {
+                // Scrolling down - show elements when they enter viewport
+                if (isInView) {
+                    if (el.classList.contains('fade-in') || 
+                        el.classList.contains('slide-in-left') || 
+                        el.classList.contains('slide-in-right') || 
+                        el.classList.contains('scale-in') ||
+                        el.classList.contains('roll-in-left') ||
+                        el.classList.contains('roll-in-right')) {
+                        el.classList.add('visible');
+                    } else if (el.classList.contains('roll-out-left') || el.classList.contains('roll-out-right')) {
+                        el.classList.remove('hidden');
+                    } else {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }
+                }
+            } else {
+                // Scrolling up - hide elements when they leave viewport
+                if (!isInView) {
+                    if (el.classList.contains('fade-in') || 
+                        el.classList.contains('slide-in-left') || 
+                        el.classList.contains('slide-in-right') || 
+                        el.classList.contains('scale-in') ||
+                        el.classList.contains('roll-in-left') ||
+                        el.classList.contains('roll-in-right')) {
+                        el.classList.remove('visible');
+                    } else if (el.classList.contains('roll-out-left') || el.classList.contains('roll-out-right')) {
+                        el.classList.add('hidden');
+                    } else {
+                        el.style.opacity = '0';
+                        el.style.transform = 'translateY(30px)';
+                    }
                 }
             }
         });
-    }, observerOptions);
+        
+        lastScrollY = currentScrollY;
+        ticking = false;
+    }
 
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.feature-card, .timeline-item, .step, .note-card, .fade-in, .slide-in-left, .slide-in-right, .scale-in');
-    animateElements.forEach(el => {
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateScrollAnimations);
+            ticking = true;
+        }
+    }
+
+    // Initialize elements as hidden
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .roll-in-left, .roll-in-right, .roll-out-left, .roll-out-right, .feature-card, .timeline-item, .step, .note-card, .criteria-list li, .eligibility-criteria h3');
+    animatedElements.forEach(el => {
         if (!el.classList.contains('fade-in') && 
             !el.classList.contains('slide-in-left') && 
             !el.classList.contains('slide-in-right') && 
-            !el.classList.contains('scale-in')) {
+            !el.classList.contains('scale-in') &&
+            !el.classList.contains('roll-in-left') &&
+            !el.classList.contains('roll-in-right') &&
+            !el.classList.contains('roll-out-left') &&
+            !el.classList.contains('roll-out-right')) {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         }
-        observer.observe(el);
     });
+
+    // Add scroll event listener
+    window.addEventListener('scroll', requestTick);
+    
+    // Initial check for elements in viewport
+    updateScrollAnimations();
+
+
 
     // File upload preview
     const fileInputs = document.querySelectorAll('input[type="file"]');

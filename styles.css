@@ -46,9 +46,26 @@ body {
     align-items: center;
 }
 
-.logo-img {
-    height: 32px;
-    width: auto;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-mark {
+    width: 24px;
+    height: 24px;
+    background: #ff6b35;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 40% 60%, 40% 100%, 0 100%);
+}
+
+.logo-text {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 0.2px;
 }
 
 .nav-links {
@@ -336,6 +353,64 @@ body {
     transform: scale(1);
 }
 
+/* Rolling Transitions */
+.roll-in-left {
+    opacity: 0;
+    transform: translateX(-100px) rotateY(-90deg);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.roll-in-left.visible {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+}
+
+.roll-in-right {
+    opacity: 0;
+    transform: translateX(100px) rotateY(90deg);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.roll-in-right.visible {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+}
+
+.roll-out-left {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.roll-out-left.hidden {
+    opacity: 0;
+    transform: translateX(-100px) rotateY(-90deg);
+}
+
+.roll-out-right {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.roll-out-right.hidden {
+    opacity: 0;
+    transform: translateX(100px) rotateY(90deg);
+}
+
+/* Ensure smooth transitions for all animated elements */
+.feature-card, .timeline-item, .step, .note-card {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
 /* Section Styles */
 .section-header {
     text-align: center;
@@ -358,10 +433,80 @@ body {
     line-height: 1.7;
 }
 
-/* About Section */
+/* Program Overview Section */
 .about {
-    padding: 120px 0;
+    padding: 100px 0;
+    background: white;
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.overview-intro {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+.partners-integration {
     background: #f8f9fa;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.partners-integration h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.partners-integration > p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.partners-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.partner-preview {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.partner-preview .partner-avatar {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.partner-preview .avatar-placeholder {
+    font-size: 1.2rem;
+}
+
+.partner-preview-info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+}
+
+.partner-preview-info p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
 }
 
 .features-grid {
@@ -475,65 +620,43 @@ body {
     line-height: 1.6;
 }
 
-/* Partners Section */
-.partners {
-    padding: 100px 0;
-    background: white;
-}
 
-.partners-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 60px;
-    margin-top: 60px;
-}
 
-.partner-card {
-    text-align: center;
-    padding: 40px;
-    border-radius: 12px;
-    background: #f8f9fa;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.partner-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.partner-image {
-    margin-bottom: 30px;
-}
-
-.partner-img {
+/* Partner Avatar Styles */
+.partner-avatar {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    object-fit: cover;
+    background: #f8f9fa;
     border: 4px solid white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
-.partner-info h3 {
-    font-size: 1.8rem;
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 10px;
-    color: #1a1a1a;
+    font-family: 'Georgia', serif;
 }
 
-.partner-title {
-    font-size: 1.1rem;
-    color: #007AFF;
-    font-weight: 500;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.james-alcorn .avatar-placeholder {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
 }
 
-.partner-bio {
-    color: #666;
-    line-height: 1.7;
-    font-size: 1rem;
+.faraz-fatemi .avatar-placeholder {
+    background: linear-gradient(135deg, #1a1a1a, #333);
 }
 
 /* Timeline Section */
@@ -545,23 +668,25 @@ body {
 .timeline-container {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
 }
+
+
 
 .timeline-item {
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     position: relative;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
 }
 
 .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 120px;
-    top: 50px;
-    bottom: -50px;
-    width: 2px;
-    background: #e2e8f0;
+    display: none;
 }
 
 .timeline-item:last-child::before {
@@ -572,27 +697,60 @@ body {
     width: 120px;
     text-align: center;
     margin-right: 40px;
+    position: relative;
+    z-index: 2;
 }
+
+.timeline-date::after {
+    content: '';
+    position: absolute;
+    right: -26px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #1a1a1a;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-date::after {
+    transform: translateY(-50%) scale(1.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+
 
 .timeline-date .date {
     display: block;
     font-size: 1.5rem;
     font-weight: 600;
     color: #1a1a1a;
+    margin-bottom: 4px;
 }
 
 .timeline-date .year {
     display: block;
     font-size: 1rem;
     color: #666;
+    font-weight: 400;
 }
 
 .timeline-content {
     flex: 1;
     background: white;
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 12px;
     border-left: 4px solid #1a1a1a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateX(2px);
 }
 
 .timeline-content h4 {
@@ -921,9 +1079,21 @@ body {
     margin-bottom: 20px;
 }
 
-.footer-logo .logo-img {
-    height: 40px;
-    width: auto;
+.footer-logo .logo-container {
+    gap: 10px;
+}
+
+.footer-logo .logo-mark {
+    width: 32px;
+    height: 32px;
+}
+
+.footer-logo .logo-text {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 0.2px;
 }
 
 /* Responsive Design */
@@ -959,6 +1129,15 @@ body {
         font-size: 2rem;
     }
     
+    .overview-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .partners-integration {
+        padding: 30px;
+    }
+    
     .eligibility-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -988,6 +1167,10 @@ body {
         margin-bottom: 20px;
     }
     
+    .timeline-date::after {
+        display: none;
+    }
+    
     .section-header h2 {
         font-size: 2rem;
     }
@@ -1004,6 +1187,15 @@ body {
     .partner-img {
         width: 150px;
         height: 150px;
+    }
+    
+    .partner-avatar {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .avatar-placeholder {
+        font-size: 2.5rem;
     }
 }
 
