@@ -1,7 +1,7 @@
 // Deadline timer functionality
 function updateTimer() {
-    // Set the deadline date (September 1, 2025 at 11:59 PM PT)
-    const deadline = new Date('2025-09-01T23:59:00-07:00').getTime();
+    // Set the deadline date (April 30, 2024 at 11:59 PM PST)
+    const deadline = new Date('April 30, 2024 23:59:00 PST').getTime();
     const now = new Date().getTime();
     const timeLeft = deadline - now;
 
@@ -199,11 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!el.classList.contains('fade-in') && 
             !el.classList.contains('slide-in-left') && 
             !el.classList.contains('slide-in-right') && 
-            !el.classList.contains('scale-in') &&
-            !el.classList.contains('roll-in-left') &&
-            !el.classList.contains('roll-in-right') &&
-            !el.classList.contains('roll-out-left') &&
-            !el.classList.contains('roll-out-right')) {
+            !el.classList.contains('scale-in')) {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
         }
