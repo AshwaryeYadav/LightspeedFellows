@@ -162,24 +162,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         el.style.transform = 'translateY(0)';
                     }
                 }
-            } else {
-                // Scrolling up - hide elements when they leave viewport
-                if (!isInView) {
-                    if (el.classList.contains('fade-in') || 
-                        el.classList.contains('slide-in-left') || 
-                        el.classList.contains('slide-in-right') || 
-                        el.classList.contains('scale-in') ||
-                        el.classList.contains('roll-in-left') ||
-                        el.classList.contains('roll-in-right')) {
-                        el.classList.remove('visible');
-                    } else if (el.classList.contains('roll-out-left') || el.classList.contains('roll-out-right')) {
-                        el.classList.add('hidden');
-                    } else {
-                        el.style.opacity = '0';
-                        el.style.transform = 'translateY(30px)';
-                    }
-                }
             }
+            // Removed the scroll up hiding behavior - elements stay visible once shown
         });
         
         lastScrollY = currentScrollY;
