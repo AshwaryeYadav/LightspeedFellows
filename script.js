@@ -1,7 +1,7 @@
 // Deadline timer functionality
 function updateTimer() {
     // Set the deadline date (April 30, 2024 at 11:59 PM PST)
-    const deadline = new Date('April 30, 2024 23:59:00 PST').getTime();
+    const deadline = new Date('August 31, 2025 23:59:00 PST').getTime();
     const now = new Date().getTime();
     const timeLeft = deadline - now;
 
